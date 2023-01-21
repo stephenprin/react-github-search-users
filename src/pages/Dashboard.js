@@ -4,7 +4,7 @@ import loadingImage from '../images/preloader.gif';
 import { GithubContext } from '../context/context';
 const Dashboard = () => {
   return (
-    <main>
+    <main className=''>
       <h2>Dashboard Page</h2>
     </main>
   );
