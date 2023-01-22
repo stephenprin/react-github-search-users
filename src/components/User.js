@@ -4,16 +4,21 @@ import Card from './Card';
 import Followers from './Followers';
 const User = () => {
  
-  return <h2>search component</h2>;
+  return <section className='section'>
+    <Wrapper className='section-center gap-y-[3rem] gap-x-[2rem] grid pt-9 md:grid-cols-2'>
+      <Card />
+      <Followers />
+      
+    </Wrapper>
+
+    </section>
 };
 
 const Wrapper = styled.div`
-  padding-top: 2rem;
-  display: grid;
-  gap: 3rem 2rem;
-  @media (min-width: 992px) {
+ 
+  /* @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
-  }
+  } */
   /* align-items: start; */
 `;
 
