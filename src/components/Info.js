@@ -78,18 +78,25 @@ const Wrapper = styled.section`
     .pink {
       background: #ffe0f0;
       color: #da4a91;
+      transition: all 0.4s ease-in-out;
+    }
+    .pink:hover, .purple:hover, .yellow:hover, .green:hover{
+      transform: scale(1.1);
     }
     .green {
       background: rgb(52 211 153);
       color: rgb(167 243 208);
+      transition: all 0.4s ease-in-out;
     }
     .purple {
       background: #e6e6ff;
       color: #5d55fa;
+      transition: all 0.4s ease-in-out;
     }
     .yellow{
       background: rgb(251 191 36);
       color: rgb(254 243 199);
+      transition: all 0.4s ease-in-out;
     }
   }
 `;
