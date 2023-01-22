@@ -6,7 +6,7 @@ const Card = () => {
 
   const { githubUser } = useGlobalContext();
   const { avatar_url, html_url, name, company, blog, bio, location, twitter_username } = githubUser;
-  return <Wrapper className=' rounded-tr-lg rounded-bl-lg rounded-br-lg pt-[2.5rem] px-[2rem] relative bg-gradient-to-r from-black to-gray-900'>
+  return <Wrapper className='rounded-tr-lg rounded-bl-lg rounded-br-lg pt-[2.5rem] px-[2rem] relative bg-gradient-to-r from-black to-gray-900'>
     <header>
       <img src={avatar_url} alt={name} className='w-12 h-12 rounded-full' />
       <div className='flex flex-col'>
@@ -16,6 +16,11 @@ const Card = () => {
       </div>
       <a href={html_url}>Follow</a>
     </header>
+    <p className='bio'>{bio}</p>
+    <div className='link'>
+      <p className=' cursor-pointer mb-[0.5rem] text-cyan-700 text-[0.8rem]'><MdBusiness className='inline-block mr-[0.5rem]' />{company || 'vetCode'}</p>
+      <p className=' cursor-pointer mb-[0.9rem] text-cyan-700 text-[0.8rem]'><MdLocationOn className='inline-block mr-[0.5rem]' />{ location || 'earth'}</p>
+    </div>
   </Wrapper>;
 };
 const Wrapper = styled.article`
@@ -33,7 +38,7 @@ const Wrapper = styled.article`
     border-top-left-radius: 0.5rem;
     text-transform: capitalize;
     padding: 0.5rem 1rem 0 1rem;
-    letter-spacing: var(--spacing);
+    letter-spacing: 0.15rem;
     font-size: 1rem;
   }
   header {
@@ -51,8 +56,8 @@ const Wrapper = styled.article`
       padding:0.75rem;
       border-radius: 1rem;
       text-transform: capitalize;
-      letter-spacing: var(--spacing);
-      transition: var(--transition);
+      letter-spacing: 0.1rem;
+      transition: all 0.4s ease-in-out;
       cursor: pointer;
       &:hover {
         background: rgb(6 182 212);
@@ -61,11 +66,13 @@ const Wrapper = styled.article`
     }
   }
   .bio {
-    color: var(--clr-grey-3);
+    font-size: 0.84rem;
+    padding-right: 1rem;
   }
   .links {
     p,
     a {
+     
       margin-bottom: 0.25rem;
       display: flex;
       align-items: center;

@@ -1,31 +1,47 @@
 import React from 'react';
-import { GithubContext } from '../context/context';
+import {  useGlobalContext } from '../context/context';
 import styled from 'styled-components';
 
 const Followers = () => {
-  return <h2>followers component</h2>;
+  const { followers } = useGlobalContext()
+  
+
+  return (
+    <Wrapper className='  rounded-tr-lg rounded-bl-lg rounded-br-lg pt-[2.5rem] px-[2rem] relative bg-gradient-to-r from-black to-gray-900'>
+      <div className='followers'>
+        {followers.map((follower, index) => {
+          const { avatar_url: img, html_url, login } = follower;
+          return (
+            <article key={index}>
+              <img src={img} alt={login} />
+              <div>
+                <h4>{login}</h4>
+                <a href={html_url }>view profile</a>
+              </div>
+              </article>
+              )
+         })}
+      </div>
+    </Wrapper>
+  )
 };
 
 const Wrapper = styled.article`
-  background: var(--clr-white);
-  border-top-right-radius: var(--radius);
-  border-bottom-left-radius: var(--radius);
-  border-bottom-right-radius: var(--radius);
-  position: relative;
+  
 
   &::before {
-    content: ' followers';
+    content: 'followers';
     position: absolute;
     top: 0;
     left: 0;
     transform: translateY(-100%);
-    background: var(--clr-white);
-    color: var(--clr-grey-5);
-    border-top-right-radius: var(--radius);
-    border-top-left-radius: var(--radius);
+    background: black;
+    color: rgb(241 245 249);
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
     text-transform: capitalize;
     padding: 0.5rem 1rem 0 1rem;
-    letter-spacing: var(--spacing);
+    letter-spacing: 0.15rem;
     font-size: 1rem;
   }
   .followers {
@@ -54,7 +70,8 @@ const Wrapper = styled.article`
       margin-bottom: 0;
     }
     a {
-      color: var(--clr-grey-5);
+      color:  rgb(34 211 238);
+      font-size: 0.66rem;
     }
   }
 `;

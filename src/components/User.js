@@ -5,7 +5,7 @@ import Followers from './Followers';
 const User = () => {
  
   return <section className='section'>
-    <Wrapper className='section-center gap-y-[3rem] gap-x-[2rem] grid pt-9 md:grid-cols-2'>
+    <Wrapper className='section-center gap-y-[3rem] gap-x-[2rem]  grid pt-16 md:grid-cols-2'>
       <Card />
       <Followers />
       
