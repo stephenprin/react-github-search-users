@@ -18,8 +18,8 @@ const Wrapper = styled.div`
  
   /* @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
-  } */
-  /* align-items: start; */
+  } 
+   align-items: start; */ 
 `;
 
 export default User;

@@ -72,6 +72,10 @@ const Wrapper = styled.article`
     a {
       color:  rgb(34 211 238);
       font-size: 0.66rem;
+      transition: all 0.3s ease-in-out;
+    }
+    a:hover{
+      color: rgb(8 145 178);
     }
   }
 `;

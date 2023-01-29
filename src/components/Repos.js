@@ -1,9 +1,47 @@
 import React from 'react';
+import { GoRepoPush } from 'react-icons/go';
 import styled from 'styled-components';
-import { GithubContext } from '../context/context';
-import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
+import {useGlobalContext } from '../context/context';
+import {Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
+
+
+
 const Repos = () => {
-  return <h2>repos component</h2>;
+  const { repos } = useGlobalContext();
+  const languages=repos.reduce((total, item) => { 
+    const { language, stargazers_count } = item;
+    if (!language) return total;
+    if (!total[language]) { 
+      total[language]={ label: language, value: 1}
+    } else {
+      total[language] = { ...total[language], value: total[language].value + 1 } 
+    }
+    return total;
+ 
+  }, {});
+  console.log(languages);/.,m 
+  const chartData = [
+    {
+      label: "HTML",
+      value: "18"
+    },
+    {
+      label: "CSS",
+      value: "42"
+    },
+    {
+      label: "Javascript",
+      value: "85"
+    },
+    
+  ];
+  return (
+    <section className='section'>
+      <Wrapper className='section-center bg-gradient-to-r from-black to-gray-900'>
+        <Pie3D data={chartData} />
+      </Wrapper>
+   </section>
+  )
 };
 
 const Wrapper = styled.div`
