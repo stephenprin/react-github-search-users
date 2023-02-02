@@ -11,7 +11,7 @@ const Card = () => {
       <img src={avatar_url} alt={name} className='w-12 h-12 rounded-full' />
       <div className='flex flex-col'>
         <h4 className='mb-[0.25rem] text-slate-100 '>{name}</h4>
-        <p className='text-slate-600 text-[0.8rem]'>@{twitter_username || 'Priestly427'}</p>
+        <p className='text-slate-600 text-[0.8rem]'>@{twitter_username || ''}</p>
        
       </div>
       <a href={html_url}>Follow</a>
