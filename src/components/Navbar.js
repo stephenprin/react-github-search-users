@@ -3,15 +3,16 @@ import styled from 'styled-components';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
-  return <Wrapper>
-    <h2>navbar component</h2>;
-  </Wrapper>
+  // const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
+  // return <Wrapper className='bg-gradient-to-r from-gray-800 to-gray-900'>
+  //   <button onClick={loginWithRedirect}>login</button>
+  // </Wrapper>
 };
 
 const Wrapper = styled.nav`
   padding: 1.5rem;
   margin-bottom: 4rem;
-  background: var(--clr-white);
+ 
   text-align: center;
   display: grid;
   grid-template-columns: auto auto 100px;

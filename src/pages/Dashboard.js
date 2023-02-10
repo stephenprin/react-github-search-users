@@ -16,7 +16,7 @@ const Dashboard = () => {
   return (
     <main className=' min-h-screen w-screen bg-gradient-to-l from-gray-900 to-slate-900'>
 
-      <Navbar /> 
+      {/* <Navbar />  */}
       <Search /> 
       <Info />
       <User />

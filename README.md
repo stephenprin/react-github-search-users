@@ -17,6 +17,7 @@
 ```jsx
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 <FiUsers className='nameOfTheClass'> </FiUsers>;
+http://localhost:3000/
 ```
 
 
